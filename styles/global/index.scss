@@ -1,0 +1,11 @@
+@use "sass:meta";
+@use "fonts" as font;
+@import "./mixins/interpolateVars";
+
+:root {
+  @include interpolateVars("font");
+}
+
+@import "reset";
+@import "globalStyle";
+@import "breakpoints";

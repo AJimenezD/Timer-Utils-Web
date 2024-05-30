@@ -1,0 +1,22 @@
+@use "sass:list";
+@use "sass:map";
+@use "globalTokens" as gtk;
+
+$-scc: map.get(gtk.$colors, successColor);
+$-dc: map.get(gtk.$colors, dangerColor);
+$-nc: map.get(gtk.$colors, neutralColor);
+$-tc: map.get(gtk.$colors, tertiaryColor);
+
+@function getColor($color, $i) {
+  @return map.get($color, nth(map-keys($color), $i));
+}
+
+$primaryBgSuccess: getColor($-scc, 8);
+$primaryBgSuccessHover: getColor($-scc, 10);
+$primaryBgError: getColor($-dc, 8);
+$primaryBgErrorHover: getColor($-dc, 10);
+$primaryBgWarning: getColor($-tc, 8);
+$primaryBgWarningHover: getColor($-tc, 10);
+$primaryBgNeutral: getColor($-nc, 8);
+$primaryBgNeutralHover: getColor($-nc, 10);
+

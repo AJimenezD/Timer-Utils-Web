@@ -1,0 +1,10 @@
+@media (max-width: 640px) {
+  body {
+    max-width: 95vw;
+  }
+
+  #clock {
+    font-size: calc(var(--txtClock) * 2.5);
+  }
+
+}

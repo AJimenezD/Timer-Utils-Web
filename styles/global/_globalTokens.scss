@@ -1,0 +1,106 @@
+$baseUnit: 16px;
+
+$colors: (
+  successColor: (
+  success50: #001201,
+  success100: #002404,
+  success200: #003708,
+  success300: #004a0f,
+  success400: #005e16,
+  success500: #00731e,
+  success600: #008928,
+  success700: #009f33,
+  success800: #00b742,
+  success900: #10cd54,
+  success1000: #4de270,
+  success1100: #89f39b,
+  success1200: #d7fcdb
+),
+  dangerColor: (
+    danger50: #260000,
+    danger100: #450000,
+    danger200: #640000,
+    danger300: #850000,
+    danger400: #a60000,
+    danger500: #c80b04,
+    danger600: #dd3527,
+    danger700: #ed5645,
+    danger800: #f97665,
+    danger900: #ff9585,
+    danger1000: #ffb5a8,
+    danger1100: #ffd3cb,
+    danger1200: #fff0ed),
+  neutralColor: (
+    neutral100: #313b49,
+    neutral200: #48515f,
+    neutral300: #4a5462,
+    neutral400: #636c78,
+    neutral500: #767e89,
+    neutral600: #878e98,
+    neutral700: #969ca5,
+    neutral800: #a3a8b0,
+    neutral900: #aeb3ba,
+    neutral1000: #c4c7cd,
+    neutral1100: #cdd0d5,
+    neutral1200: #d7d9dd,
+  ),
+  tertiaryColor: (
+    yellow50: #3b2c00,
+    yellow100: #4e3a00,
+    yellow200: #604800,
+    yellow300: #725600,
+    yellow400: #856600,
+    yellow500: #997500,
+    yellow600: #ac8500,
+    yellow700: #c09500,
+    yellow800: #d4a600,
+    yellow900: #e7b700,
+    yellow1000: #fcc900,
+    yellow1100: #ffe048,
+    yellow1200: #fff69c,
+  ),
+);
+
+$font: (
+  fontWeights: (
+  "regular": 300,
+  "medium": 400,
+  "semibold": 500,
+  "bold": 600,
+),
+  font: Onest,
+  fontFamily: Onest + "," + sans-serif,
+  fontSizes: (
+    step--3: clamp(0.544rem, 0.5783rem + -0.0381vi, 0.5706rem),
+    step--2: clamp(0.642rem, 0.6311rem + 0.0543vi, 0.68rem),
+    step--1: clamp(0.7222rem, 0.6857rem + 0.1825vi, 0.85rem),
+    step-0: clamp(0.8125rem, 0.7411rem + 0.3571vi, 1.0625rem),
+    step-1: clamp(0.9141rem, 0.7958rem + 0.5915vi, 1.3281rem),
+    step-2: clamp(1.0283rem, 0.8478rem + 0.9026vi, 1.6602rem),
+    step-3: clamp(1.1569rem, 0.8945rem + 1.3119vi, 2.0752rem),
+    step-4: clamp(1.3015rem, 0.9322rem + 1.8465vi, 2.594rem),
+    step-5: clamp(1.4642rem, 0.9561rem + 2.5405vi, 3.2425rem),
+    step-6: clamp(1.6472rem, 0.9598rem + 3.4371vi, 4.0531rem),
+  ),
+  fontLineHeight: (
+    "base": 1.1em,
+    "md": 1.125em,
+    "lg": 1.3em,
+    "xl": 1.5em,
+    "xxl": 1.75em,
+  ),
+);
+
+$z-Indexes: (
+  "zIndexNegative": -1,
+  "zIndex-0": 0,
+  "zIndex-100": 100,
+  "zIndex-200": 200,
+  "zIndex-300": 300,
+  "zIndex-400": 400,xb
+                      "zIndex-500": 500,
+);
+
+$urlClockFont: "../assets/fonts/digital-7.woff";
+$urlDefaultFont: "https://fonts.gstatic.com/s/onest/v6/gNMKW3F-SZuj7xmf-HY.woff2";
+$urlNoise: "data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' id='svgimage' viewBox='0 0 400 400' xlmns='http://w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.2' numOctaves='4' stitchTiles='stitch' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter) contrast(100%) opacity(10%)' /%3E%3C/svg%3E";

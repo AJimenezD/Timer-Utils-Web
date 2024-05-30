@@ -1,0 +1,50 @@
+@use "sass:color";
+@use "../global/colors" as *;
+
+.btns {
+  font-size: var(--txtBtnBase);
+
+  & button {
+    color: white;
+    border-radius: 1rem;
+    border: 0;
+    cursor: pointer;
+    margin: 10px;
+    padding: 0.825rem 1.5rem;
+    min-width: 7rem;
+  }
+
+  &--success {
+    background-color: $primaryBgSuccess;
+    
+    &:hover {
+      background-color: $primaryBgSuccessHover;
+    }
+  }
+
+  &--error {
+    background-color: $primaryBgError;
+
+    &:hover {
+      background-color: $primaryBgErrorHover;
+    }
+  }
+
+  &--warning {
+    background-color: $primaryBgWarning;
+
+    &:hover {
+      background-color: $primaryBgWarningHover;
+    }
+  }
+
+  &--neutral {
+    background-color: #1d80d1;
+
+    &:hover {
+      background-color: #018dff;
+    }
+  }
+}
+
+

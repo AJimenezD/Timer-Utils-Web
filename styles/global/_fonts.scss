@@ -1,0 +1,44 @@
+@use "sass:map";
+@use "sass:list";
+@use "globalTokens.scss" as gtk;
+
+@function getFont($type, $value: 0) {
+  @if $value == 0 {
+    @return map.get(gtk.$font, $type);
+  } @else {
+    @return map.get(gtk.$font, $type, $value);
+  }
+}
+
+@function getMap($n) {
+  @if $n == 1 {
+    @return list.nth($-type, 1);
+  } @else if $n == 2 {
+    @return list.nth($-type, 2);
+  } @else {
+    @return list.nth($-type, 3);
+  }
+}
+
+$-type: fontSizes, fontLineHeight, fontWeights;
+
+// Size
+$txtLabelBase: getFont(getMap(1), "step--1");
+$txtBtnBase: getFont(getMap(1), "step-1");
+$txtBodyBase: getFont(getMap(1), "step-1");
+$txtSubheadingBase: getFont(getMap(1), "step-2");
+$txtHeadingBase: getFont(getMap(1), "step-3");
+$txtClock: getFont(getMap(1), "step-6");
+
+// Line Height
+// $lineHeightReset: 0;
+// $lineHeightHead: getFont(getMap(2), "lg");
+// $lineHeightSubhead: getFont(getMap(2), "md");
+// $lineHeightBody: getFont(getMap(2), "base");
+// $lineHeightLabel: getFont(getMap(2), "base");
+
+// Weight
+$fontRegular: getFont(fontWeights, "regular");
+$fontMedium: getFont(fontWeights, "medium");
+$fontSemiBold: getFont(fontWeights, "semibold");
+$fontBold: getFont(fontWeights, "bold");

@@ -1,0 +1,5 @@
+@mixin interpolateVars($map) {
+  @each $name, $value in meta.module-variables($map) {
+    --#{$name}: #{$value};
+  }
+}

@@ -1,0 +1,59 @@
+@use "sass:map";
+@use "globalTokens" as gt;
+@use "./mixins/generateFontFace" as gFF;
+
+@include gFF.fontFace(map.get(gt.$font, font), 100, 900, gt.$urlDefaultFont);
+@include gFF.fontFace(digital-7, 100, 900, gt.$urlClockFont);
+
+html {
+  font-size: 1rem;
+  font-family: map.get(gt.$font, fontFamily);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #5383e81a;
+  color: white;
+  font-size: var(--txtBodyBase);
+  font-weight: var(--fontRegular);
+  line-height: 1em;
+  margin: 0 auto;
+
+}
+
+main {
+  padding-top: 5.5rem;
+}
+
+h1,
+h2 {
+  font-size: var(--txtHeadingBase);  
+}
+
+h1,
+h2,
+h3,
+{
+  line-height: 1em;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}  
+
+button {
+  margin: 0;
+  padding: 0;
+  font-weight: var(--fontBold);
+}
+
+table {
+  text-align: right;
+}
+
+td,
+th {
+  padding: 0 20px;
+}
