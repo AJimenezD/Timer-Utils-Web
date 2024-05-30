@@ -14,7 +14,14 @@ const alarmSound = new Audio("../assets/sound/alarm-clock.mp3");
 let nIntervId = null, clockIntervals = null, seconds, minutes, hours;
 
 let currentTime = new Date();
-let ctArray = currentTime.toLocaleTimeString().split(":");
+let timeOptions = {
+  timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+  hour12: false,
+  hour: "numeric",
+  minute: "numeric",
+  second: "numeric",
+};
+let ctArray = currentTime.toLocaleTimeString(undefined, timeOptions).split(":");
 currentTimeClock.innerText = ctArray.join(":");
 
 let dateString = new Intl.DateTimeFormat(undefined, {
@@ -113,19 +120,15 @@ function calculateRemainingTime(selectedTime, currentTime) {
 
 function refreshDisplayTime() {
   if (!nIntervId) {
-
     nIntervId = setInterval(() => {
       ctArray[2]++;
-
       if (ctArray[2] % 5 === 0) {
         currentTime = new Date();
-        ctArray = currentTime.toLocaleTimeString().split(":");
+        ctArray = currentTime.toLocaleTimeString(undefined, timeOptions).split(":");
       }
-
       ctArray = ctArray.map((x) => {
         return formatString(x);
       })      
-
       currentTimeClock.innerText = ctArray.join(":");
     }, 1000);
   } else {
