@@ -67,10 +67,7 @@ function startAlarm() {
   
   const selectedTime = formatTime(selectHours.value, selectMinutes.value, 0);
   const actualTime = ctArray.join(":");
-  console.log(selectedTime, actualTime);
   let remainingTime = calculateRemainingTime(selectedTime, actualTime);
-  console.log(remainingTime);
-
   
   if (!remainingTime) {
     return alarm("error");
@@ -137,6 +134,8 @@ function refreshDisplayTime() {
 }
 
 function countdown(remainingTime) {
+  remainingTime.seconds--;
+
   clockIntervals = setInterval(() => {
     remainingTime.seconds--;
     if (remainingTime.seconds < 0) {
@@ -147,11 +146,13 @@ function countdown(remainingTime) {
         remainingTime.hours--;
       }
     }
-    if (remainingTime.hours === 0 && remainingTime.minutes === 0 && remainingTime.seconds === 0) {
+    
+    if (remainingTime.seconds === 0 && (remainingTime.minutes === 0 & remainingTime.hours === 0)) {
       alarmClock.textContent = formatTime(0, 0, 0);
-      clearInterval(currentIntervalId);
+      clearInterval(clockIntervals);
       alarmSound.play();
     }
+
     alarmClock.textContent = formatTime(remainingTime.hours, remainingTime.minutes, remainingTime.seconds);
   }, 1000);
 }
